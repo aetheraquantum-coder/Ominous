@@ -1,0 +1,80 @@
+{
+  "name": "Ominous Core 24 standalone presentation prototype",
+  "version": "0.1.0",
+  "status": "inspectable candidate; browser-unverified; not integrated or published",
+  "checked_at_utc": "2026-10-07T10:47:30.818799+00:00",
+  "source_commit": "f46ed85615e287cae5cdfe3118d113656b09d8de",
+  "node_version": "v24.19.0",
+  "command": "node --test test/*.test.mjs test/browser.test.cjs",
+  "results": {
+    "total": 109,
+    "passed": 99,
+    "failed": 0,
+    "not_run_browser": 10
+  },
+  "checked": [
+    "Explicit field projection and strict public schema",
+    "Inert HTML and caption escaping",
+    "Host state clearing and isolated controller logic",
+    "Public-only HTML/JSON/SRT exports",
+    "Synthetic leak detection, including deliberately injected failure",
+    "Input consumption limited to 65537 bytes; regular files only",
+    "Approval descriptor snapshot and malicious array cases",
+    "Non-overwrite output and separate digest receipt",
+    "Input fixture byte preservation"
+  ],
+  "not_verified": [
+    "Real-browser appearance and screenshots",
+    "Real-browser accessibility and interactions",
+    "Motion smoothness and frame cadence",
+    "Operating-system or authentication security controls",
+    "Installed Ominous GPT or any other core/product"
+  ],
+  "browser_note": "10 scenarios intentionally not run because the environment browser/IPC route was restricted. No blocked launch, loopback retry, escalation or security-setting change occurred.",
+  "independent_review": {
+    "reviewed_commit": "baa5033682b9aad1884c2e67fc5816ddb9ac0df8",
+    "critical": 0,
+    "important": 2,
+    "minor": 1,
+    "important_fixes": "Both fixed by author with failing regression tests followed by full green tests in commit f46ed85615e287cae5cdfe3118d113656b09d8de.",
+    "post_fix_independent_review": "not repeated",
+    "deferred_minor": "An invalid browser-controller state keeps an already-approved title while the host API clears it. Both show error and clear result text. The fake-DOM parity test normalizes the invalid state and does not compare title; normal UI choices are valid states."
+  },
+  "decisions": [
+    "New isolated source repository; no existing core sources or allocations changed",
+    "No product connection, public hosting, new permission or deployment",
+    "Fixed controller tested in a minimal fake DOM; these are logic checks, not browser acceptance",
+    "Branch retained locally; no merge, push or pull request"
+  ],
+  "limitations": [
+    "Approval is an explicit caller-controlled data boundary, not a secret detector. Text put in an approved field is disclosed.",
+    "HTML contains ordinary public UI JavaScript; this is not source-code access control or an unmonitorability claim.",
+    "Diagnostic folder separation is not authentication or an OS access-control guarantee."
+  ],
+  "source_files_sha256": {
+    "src/browser-script.mjs": "47328e91d886e9a12e0b8acf6596a045fc34e56112d80e4ab08b88337962f072",
+    "src/export.mjs": "d2b5032bada963e30f0db13586209aa5a9156dce67ffeabb0778ec32cfb1b1d4",
+    "src/public-view.mjs": "a887c2ec7c3b90433b90d7c4789061611fb6506051b458d96be179a4703c0cff",
+    "src/read-input.mjs": "7ef8936b675e1695994bbb4c451e6c54e13ead34875776757aa8dfa917298c50",
+    "src/render.mjs": "8c9e5b0a45f4015c56f2b97b954fd432ae3850e77ee19af69b8585be8cdebf72",
+    "src/state.mjs": "564013b9c4985e24d88600fc9a3db8bf0d571bd2098e7061ddad53dec3d8ae9b",
+    "bin/demo.mjs": "fe85ae3d0a5038fd73bbf6940727470e53956c4df36444a22078cd11d57c692c",
+    "fixtures/approved.json": "ee9ff3d2ddbbea3e4ba78f837604ffaabae73668c19294c86a942e079e53da01",
+    "fixtures/denied.json": "b2b37f45bbf559b48f3d31b46f663c22997fb2cb90196146999ffd7f76be9ebb",
+    "fixtures/leakage.json": "5f449a79dffd55aeeb2a6bc2dbe17345850726fccf135fe45f5642fc54000e9c",
+    "fixtures/malformed.json": "78d86ff82281899c7890f8023ddfcc5d6373f1bb55dfc8b4213543cca614de76",
+    "test/browser.test.cjs": "e25ad60d50242eaaff055d6c59338c2b3ec47554c08bce729f4441e18a0b5d62",
+    "test/controller.test.mjs": "67029754390e48abb270b9555664452865c60782fc00cc70fd1b6a34f070a6b3",
+    "test/delivery.test.mjs": "75217b41b55a32db4d2d033baa016b8bc6c388a27c53398b83597e6d62dc066d",
+    "test/export.test.mjs": "b91b37e3d4afdce7f11d1dd83fac43029b1ce17dd0e35e13566612eda4a38269",
+    "test/input.test.mjs": "a418c57ec92354e600137941b78fc6bad63371455c258da2ebe77053999c5b60",
+    "test/projection.test.mjs": "774b7c33a74d601540d80879c2b61393d6cb6aaf23d66ede8acfeaabd2aee440",
+    "test/state.test.mjs": "5c805c118fc1eeae09d8756f186c30cea25ab390fc16af928044373deedc447f",
+    "test/support/disclosure.cjs": "b48d2f8dd9588e1702d1410bdb8952bd68a2c18334f04baceda36b0d6b66da0e"
+  },
+  "public_files_sha256": {
+    "captions.srt": "48e4b7c4d1c2fdae5c74a20d072ef897318eaa67a78da788188e2286d9fabd44",
+    "index.html": "92c51afd943f055d36cdc3b812881a8a5eed20fc6ff1c9c9f9ced71220cea64a",
+    "view.json": "07a2cc428d12ab66402443efefb098ddb2d58aef4243d951638296183d071d0d"
+  }
+}

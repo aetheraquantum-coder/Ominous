@@ -1,0 +1,23 @@
+{
+  "record": {
+    "title": "Ominous",
+    "summary": "Presentation demo ready.",
+    "caption": "Only approved display content appears here.",
+    "status": "ready",
+    "private": {
+      "code": "OMINOUS_PRIVATE_CODE_24",
+      "logs": [
+        "OMINOUS_PRIVATE_LOG_24"
+      ],
+      "path": "OMINOUS_PRIVATE_PATH_24",
+      "nested": {
+        "owner": "OMINOUS_PRIVATE_OWNER_24"
+      }
+    }
+  },
+  "approval": [
+    "title",
+    "summary",
+    "caption"
+  ]
+}

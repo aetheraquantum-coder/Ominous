@@ -1,0 +1,63 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<meta http-equiv="Content-Security-Policy" content="default-src 'none'; script-src 'sha256-/zdBitYj4r0jtsvWdcq/Fe0UTXncGrLTFWto8dsHEpw='; style-src 'unsafe-inline'; connect-src 'none'; img-src 'none'; font-src 'none'; media-src 'none'; object-src 'none'; base-uri 'none'; form-action 'none'">
+<title>Ominous · Core 24 presentation demo</title>
+<style>
+:root{color-scheme:dark;--ink:#080f1a;--paper:#edf6f2;--muted:#9baeb5;--line:#ffffff20;--aqua:#8ee7d2;--gold:#dfb879}*{box-sizing:border-box}html,body{margin:0;min-height:100%;background:var(--ink);font-family:system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;color:var(--paper)}body{background:radial-gradient(ellipse at 65% 15%,#153237 0%,#0d1928 35%,#080f1a 78%)}main{max-width:1500px;margin:auto;padding:clamp(22px,4vw,68px);min-height:100vh;display:flex;flex-direction:column}header{display:flex;align-items:center;justify-content:space-between;gap:20px;border-bottom:1px solid var(--line);padding-bottom:22px}.brand{font-size:12px;letter-spacing:.22em;text-transform:uppercase;display:flex;gap:12px;align-items:center}.brand i{width:9px;height:9px;border-radius:50%;background:var(--aqua);box-shadow:0 0 20px #8ee7d266}.chip{font-size:11px;letter-spacing:.1em;color:var(--muted);border:1px solid var(--line);border-radius:30px;padding:9px 13px;white-space:nowrap}.stage{display:grid;grid-template-columns:1fr 1.06fr;align-items:center;gap:4vw;flex:1;padding:48px 0 25px}.eyebrow{font-size:11px;letter-spacing:.23em;text-transform:uppercase;color:var(--gold);margin:0 0 20px}h1{font-size:clamp(40px,6vw,92px);font-weight:450;line-height:1.05;letter-spacing:-.055em;margin:0 0 24px;overflow-wrap:anywhere}#display-summary{font-size:clamp(17px,1.6vw,23px);color:#bfcecF;line-height:1.6;max-width:36ch;min-height:3.2em;overflow-wrap:anywhere}.status{display:inline-flex;align-items:center;gap:9px;margin-top:26px;font-size:12px;border:1px solid #8ee7d23a;border-radius:30px;padding:10px 15px;color:var(--aqua)}.status:before{content:'';width:5px;height:5px;border-radius:50%;background:currentColor}body[data-state=error] .status,body[data-state=blocked] .status{color:#f1c68c;border-color:#dfb87966}.scene{position:relative;aspect-ratio:1;min-width:0;display:flex;align-items:center;justify-content:center}.scene svg{width:100%;height:auto;filter:drop-shadow(0 28px 40px #0006)}.ghost{transform-origin:320px 315px;animation:float 15s ease-in-out infinite}.halo{transform-origin:320px 315px;animation:halo 15s ease-in-out infinite}.spark{animation:twinkle 15s ease-in-out infinite}.caption{border-top:1px solid var(--line);padding:24px 0;min-height:80px;font-size:16px;line-height:1.6;color:#d3dfdf;overflow-wrap:anywhere}.footer{display:flex;align-items:center;justify-content:space-between;gap:24px;padding-top:18px;color:var(--muted);font-size:11px;line-height:1.7}.controls{display:flex;align-items:center;gap:10px;flex-wrap:wrap}.controls label{font-size:11px;color:var(--muted)}select,button{font:inherit;font-size:12px;line-height:1.2;background:#14232f;color:var(--paper);border:1px solid #ffffff35;border-radius:9px;padding:10px 12px;min-height:40px}button{cursor:pointer}button:hover,select:hover{background:#203743}button:focus-visible,select:focus-visible{outline:2px solid var(--aqua);outline-offset:4px}.quiet-line{display:block;color:#718792;margin-top:3px}body[data-reduced-motion=true] .ghost,body[data-reduced-motion=true] .halo,body[data-reduced-motion=true] .spark{animation:none!important;transform:none!important}@keyframes float{0%,100%{transform:translateY(0) rotate(-2deg)}50%{transform:translateY(-18px) rotate(2deg)}}@keyframes halo{0%,100%{opacity:.45;transform:scale(.96)}50%{opacity:.9;transform:scale(1.025)}}@keyframes twinkle{0%,100%{opacity:.35}50%{opacity:.9}}@media(prefers-reduced-motion:reduce){.ghost,.halo,.spark{animation:none!important;transform:none!important}}@media(max-width:700px){main{padding:24px}.stage{grid-template-columns:1fr;padding-top:42px;gap:0}.scene{max-width:420px;width:100%;justify-self:center;margin:-8px 0}h1{font-size:52px}#display-summary{font-size:18px;min-height:0}.status{margin-top:18px}.caption{min-height:68px;padding:20px 0;font-size:14px}.footer{flex-direction:column;align-items:flex-start;gap:16px}.chip{font-size:9px;padding:7px 10px}.brand{font-size:10px;letter-spacing:.13em}header{gap:10px}.controls{width:100%}select{flex:1}}
+</style></head><body data-state="ready" data-reduced-motion="false"><main>
+<header><div class="brand"><i aria-hidden="true"></i>Ominous <span style="color:var(--muted)">/ Core 24</span></div><span class="chip">LOCAL PRESENTATION DEMO</span></header>
+<section class="stage" aria-label="Ominous presentation"><div><p class="eyebrow">The living studio</p><h1 id="display-title">Ominous</h1><p id="display-summary">Presentation demo ready.</p><p class="status" id="display-status" role="status" aria-live="polite">Demo: ready</p></div>
+<div class="scene"><svg viewBox="0 0 640 640" role="img" aria-label="A friendly ghost floating in a quiet, softly lit studio">
+<defs><radialGradient id="room"><stop stop-color="#234942"/><stop offset="1" stop-color="#0c1926"/></radialGradient><linearGradient id="body" x2=".7" y2="1"><stop stop-color="#f6fff9"/><stop offset="1" stop-color="#a9d9d2"/></linearGradient><radialGradient id="glow"><stop stop-color="#8ee7d2" stop-opacity=".2"/><stop offset="1" stop-color="#8ee7d2" stop-opacity="0"/></radialGradient></defs>
+<circle cx="320" cy="320" r="268" fill="url(#room)" stroke="#8ee7d218"/><circle cx="320" cy="300" r="210" fill="url(#glow)"/>
+<path d="M128 490H512M145 488V188Q320 90 495 188V488" fill="none" stroke="#98c8bf24" stroke-width="2"/>
+<path d="M163 230H216M163 316H216M163 403H216M424 230H477M424 316H477M424 403H477" fill="none" stroke="#d1b58b35" stroke-width="4"/>
+<g opacity=".6" fill="#3c6870"><rect x="169" y="178" width="12" height="48" rx="2"/><rect x="185" y="190" width="9" height="36" rx="2"/><rect x="199" y="183" width="11" height="43" rx="2"/><rect x="430" y="268" width="12" height="44" rx="2"/><rect x="447" y="263" width="9" height="49" rx="2"/><rect x="462" y="276" width="10" height="36" rx="2"/></g>
+<g fill="#c19a65" opacity=".55"><rect x="168" y="360" width="13" height="39" rx="2"/><rect x="187" y="351" width="9" height="48" rx="2"/><rect x="201" y="366" width="10" height="33" rx="2"/><rect x="430" y="183" width="10" height="43" rx="2"/><rect x="446" y="172" width="11" height="54" rx="2"/><rect x="462" y="190" width="8" height="36" rx="2"/></g>
+<ellipse cx="320" cy="466" rx="115" ry="19" fill="#000" opacity=".25"/>
+<g class="halo"><ellipse cx="320" cy="316" rx="154" ry="118" fill="none" stroke="#8ee7d2" stroke-opacity=".24"/><ellipse cx="320" cy="316" rx="169" ry="131" fill="none" stroke="#8ee7d2" stroke-opacity=".1"/></g>
+<g class="ghost"><path d="M234 348V282C234 230 269 196 320 196S406 230 406 282V405Q390 427 373 403Q356 383 338 408Q320 433 302 408Q284 383 267 403Q250 427 234 405Z" fill="url(#body)"/><path d="M237 329Q192 301 194 333Q208 359 236 369M403 329Q448 301 446 333Q432 359 404 369" fill="url(#body)"/><ellipse cx="292" cy="286" rx="9" ry="14" fill="#183746"/><ellipse cx="347" cy="286" rx="9" ry="14" fill="#183746"/><circle cx="295" cy="281" r="3" fill="#fff"/><circle cx="350" cy="281" r="3" fill="#fff"/><path d="M305 316Q320 331 335 316" fill="none" stroke="#2b6670" stroke-width="4" stroke-linecap="round"/><ellipse cx="276" cy="308" rx="13" ry="6" fill="#e8b2a1" opacity=".5"/><ellipse cx="365" cy="308" rx="13" ry="6" fill="#e8b2a1" opacity=".5"/></g>
+<g class="spark" fill="#dfb879"><circle cx="231" cy="179" r="3"/><circle cx="422" cy="405" r="3"/><circle cx="215" cy="412" r="2"/><path d="M419 190v14m-7-7h14" stroke="#dfb879" stroke-width="1.5"/><path d="M198 288v10m-5-5h10" stroke="#8ee7d2"/></g>
+</svg></div></section>
+<div class="caption" id="display-caption" aria-live="polite">Only approved display content appears here.</div>
+<footer class="footer"><div>Synthetic preview · No live core connected<span class="quiet-line">Prototype 0.1.0 · Browser appearance and motion await verification</span></div><div class="controls"><label for="preview-state">Preview state</label><select id="preview-state"><option value="idle">Idle</option><option value="loading">Loading</option><option value="ready" selected>Ready</option><option value="blocked">Blocked</option><option value="error">Error</option><option value="cancelled">Cancelled</option></select><button id="motion-toggle" type="button" aria-pressed="false">Reduce motion</button></div></footer>
+</main><script id="public-data" type="application/json">{"schema":"ominous-public-view/v1","title":"Ominous","summary":"Presentation demo ready.","caption":"Only approved display content appears here.","status":"ready"}</script><script>(() => {
+  'use strict';
+  const allowed = ['idle','loading','ready','blocked','error','cancelled'];
+  const $ = id => document.getElementById(id);
+  let view;
+  try { view = JSON.parse($('public-data').textContent); }
+  catch { view = {title:'',summary:'',caption:'',status:'error'}; }
+  const stateSelect = $('preview-state');
+  const motionButton = $('motion-toggle');
+  let userReduced = document.body.dataset.reducedMotion === 'true';
+  let preference;
+  try { preference = window.matchMedia('(prefers-reduced-motion: reduce)'); }
+  catch { preference = {matches:true}; }
+  function paint() {
+    $('display-title').textContent = view.title || 'Ominous';
+    $('display-summary').textContent = view.summary;
+    $('display-caption').textContent = view.caption;
+    $('display-status').textContent = 'Demo: ' + view.status;
+    document.body.dataset.state = view.status;
+    stateSelect.value = view.status;
+  }
+  function transition(next) {
+    if (!allowed.includes(next)) next = 'error';
+    view = {title:view.title,summary:next === 'ready' ? view.summary : '',
+      caption:next === 'ready' ? view.caption : '',status:next};
+    paint();
+  }
+  function setMotion() {
+    const reduced = userReduced || preference.matches;
+    document.body.dataset.reducedMotion = String(reduced);
+    motionButton.setAttribute('aria-pressed',String(reduced));
+    motionButton.textContent = preference.matches ? 'Reduced by device' : (reduced ? 'Enable motion' : 'Reduce motion');
+  }
+  stateSelect.addEventListener('change',event => transition(event.target.value));
+  motionButton.addEventListener('click',() => { userReduced = !userReduced; setMotion(); });
+  if (typeof preference.addEventListener === 'function') preference.addEventListener('change',setMotion);
+  // No success text is restored by selecting ready after a non-ready state.
+  if (!allowed.includes(view.status)) transition('error'); else paint();
+  setMotion();
+})();</script></body></html>

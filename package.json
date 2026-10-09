@@ -1,0 +1,1 @@
+{"name":"ominous-core24-prototype","version":"0.1.0","private":true,"type":"module","scripts":{"test":"node --test test/*.test.mjs","test:browser":"node --test test/browser.test.cjs","demo":"node bin/demo.mjs --fixture fixtures/approved.json --out out"},"engines":{"node":">=24"}}

@@ -1,0 +1,673 @@
+TAP version 13
+# Subtest: approved public copy and honest demo status appear
+ok 1 - approved public copy and honest demo status appear # SKIP Not run: browser launch/IPC restrictions. No browser launch or permission bypass attempted.
+  ---
+  duration_ms: 0.5585
+  type: 'test'
+  ...
+# Subtest: DOM and accessibility attributes contain no private marker
+ok 2 - DOM and accessibility attributes contain no private marker # SKIP Not run: browser launch/IPC restrictions. No browser launch or permission bypass attempted.
+  ---
+  duration_ms: 0.0764
+  type: 'test'
+  ...
+# Subtest: browser disclosure checker catches injected synthetic marker
+ok 3 - browser disclosure checker catches injected synthetic marker # SKIP Not run: browser launch/IPC restrictions. No browser launch or permission bypass attempted.
+  ---
+  duration_ms: 0.0517
+  type: 'test'
+  ...
+# Subtest: state changes and repeated selections clear stale success
+ok 4 - state changes and repeated selections clear stale success # SKIP Not run: browser launch/IPC restrictions. No browser launch or permission bypass attempted.
+  ---
+  duration_ms: 0.703
+  type: 'test'
+  ...
+# Subtest: manual reduced motion stops decorative animation
+ok 5 - manual reduced motion stops decorative animation # SKIP Not run: browser launch/IPC restrictions. No browser launch or permission bypass attempted.
+  ---
+  duration_ms: 0.1031
+  type: 'test'
+  ...
+# Subtest: device reduced motion stays respected after repeated toggles
+ok 6 - device reduced motion stays respected after repeated toggles # SKIP Not run: browser launch/IPC restrictions. No browser launch or permission bypass attempted.
+  ---
+  duration_ms: 0.1432
+  type: 'test'
+  ...
+# Subtest: desktop and mobile layouts have no horizontal overflow
+ok 7 - desktop and mobile layouts have no horizontal overflow # SKIP Not run: browser launch/IPC restrictions. No browser launch or permission bypass attempted.
+  ---
+  duration_ms: 0.1373
+  type: 'test'
+  ...
+# Subtest: 15-second frame-cadence target is measured on this host
+ok 8 - 15-second frame-cadence target is measured on this host # SKIP Not run: browser launch/IPC restrictions. No browser launch or permission bypass attempted.
+  ---
+  duration_ms: 0.2196
+  type: 'test'
+  ...
+# Subtest: presentation makes no network requests
+ok 9 - presentation makes no network requests # SKIP Not run: browser launch/IPC restrictions. No browser launch or permission bypass attempted.
+  ---
+  duration_ms: 0.2676
+  type: 'test'
+  ...
+# Subtest: presentation emits no page errors
+ok 10 - presentation emits no page errors # SKIP Not run: browser launch/IPC restrictions. No browser launch or permission bypass attempted.
+  ---
+  duration_ms: 0.1972
+  type: 'test'
+  ...
+# Subtest: controller only paints public text
+ok 11 - controller only paints public text
+  ---
+  duration_ms: 1.6302
+  type: 'test'
+  ...
+# Subtest: controller states agree with shared transition rules and clear stale results
+ok 12 - controller states agree with shared transition rules and clear stale results
+  ---
+  duration_ms: 1.0005
+  type: 'test'
+  ...
+# Subtest: repeated motion toggles preserve status and set accessibility state
+ok 13 - repeated motion toggles preserve status and set accessibility state
+  ---
+  duration_ms: 0.6702
+  type: 'test'
+  ...
+# Subtest: device reduced-motion preference remains respected
+ok 14 - device reduced-motion preference remains respected
+  ---
+  duration_ms: 0.7853
+  type: 'test'
+  ...
+# Subtest: disclosure checker detects the deliberate synthetic marker
+ok 15 - disclosure checker detects the deliberate synthetic marker
+  ---
+  duration_ms: 1.4266
+  type: 'test'
+  ...
+# Subtest: projection prevents malicious non-public fixture content in every export
+ok 16 - projection prevents malicious non-public fixture content in every export
+  ---
+  duration_ms: 4.313
+  type: 'test'
+  ...
+# Subtest: approved delivery is public-only and source-preserving
+ok 17 - approved delivery is public-only and source-preserving
+  ---
+  duration_ms: 79.918
+  type: 'test'
+  ...
+# Subtest: denied delivery is public-only and source-preserving
+ok 18 - denied delivery is public-only and source-preserving
+  ---
+  duration_ms: 63.2264
+  type: 'test'
+  ...
+# Subtest: malformed delivery is public-only and source-preserving
+ok 19 - malformed delivery is public-only and source-preserving
+  ---
+  duration_ms: 67.2896
+  type: 'test'
+  ...
+# Subtest: leakage delivery is public-only and source-preserving
+ok 20 - leakage delivery is public-only and source-preserving
+  ---
+  duration_ms: 67.6723
+  type: 'test'
+  ...
+# Subtest: oversized and invalid UTF-8 fixtures reject without exposing contents
+ok 21 - oversized and invalid UTF-8 fixtures reject without exposing contents
+  ---
+  duration_ms: 105.7772
+  type: 'test'
+  ...
+# Subtest: CLI will not follow an existing output symlink
+not ok 22 - CLI will not follow an existing output symlink
+  ---
+  duration_ms: 1.3653
+  type: 'test'
+  location: 'C:\\Users\\Chadwick\\Documents\\Codex\\2026-10-08\\task-2\\Ominous-Core-24\\test\\delivery.test.mjs:17:1'
+  failureType: 'testCodeFailure'
+  error: "EPERM: operation not permitted, symlink 'C:\\Users\\Chadwick\\AppData\\Local\\Temp\\ominous-output-ilkLoB\\target' -> 'C:\\Users\\Chadwick\\AppData\\Local\\Temp\\ominous-output-ilkLoB\\link'"
+  code: 'EPERM'
+  stack: |-
+    async symlink (node:internal/fs/promises:1001:10)
+    async TestContext.<anonymous> (file:///C:/Users/Chadwick/Documents/Codex/2026-10-08/task-2/Ominous-Core-24/test/delivery.test.mjs:17:265)
+    async Test.run (node:internal/test_runner/test:1054:7)
+    async Test.processPendingSubtests (node:internal/test_runner/test:744:7)
+  ...
+# Subtest: exports one approved view as HTML JSON and SRT
+ok 23 - exports one approved view as HTML JSON and SRT
+  ---
+  duration_ms: 2.6157
+  type: 'test'
+  ...
+# Subtest: escapes markup in HTML and caption exports
+ok 24 - escapes markup in HTML and caption exports
+  ---
+  duration_ms: 0.2796
+  type: 'test'
+  ...
+# Subtest: strict extra view keys produce safe error exports
+ok 25 - strict extra view keys produce safe error exports
+  ---
+  duration_ms: 0.8189
+  type: 'test'
+  ...
+# Subtest: idle export has no stale caption or summary
+ok 26 - idle export has no stale caption or summary
+  ---
+  duration_ms: 0.1712
+  type: 'test'
+  ...
+# Subtest: loading export has no stale caption or summary
+ok 27 - loading export has no stale caption or summary
+  ---
+  duration_ms: 0.1582
+  type: 'test'
+  ...
+# Subtest: blocked export has no stale caption or summary
+ok 28 - blocked export has no stale caption or summary
+  ---
+  duration_ms: 0.0842
+  type: 'test'
+  ...
+# Subtest: error export has no stale caption or summary
+ok 29 - error export has no stale caption or summary
+  ---
+  duration_ms: 0.1205
+  type: 'test'
+  ...
+# Subtest: cancelled export has no stale caption or summary
+ok 30 - cancelled export has no stale caption or summary
+  ---
+  duration_ms: 0.087
+  type: 'test'
+  ...
+# Subtest: denied view uses safe empty content
+ok 31 - denied view uses safe empty content
+  ---
+  duration_ms: 0.3508
+  type: 'test'
+  ...
+# Subtest: public HTML contains no network or owner diagnostic route
+ok 32 - public HTML contains no network or owner diagnostic route
+  ---
+  duration_ms: 0.3534
+  type: 'test'
+  ...
+# Subtest: reduced motion option is explicit
+ok 33 - reduced motion option is explicit
+  ---
+  duration_ms: 0.2069
+  type: 'test'
+  ...
+# Subtest: CLI writes only three public files and one separate receipt
+ok 34 - CLI writes only three public files and one separate receipt
+  ---
+  duration_ms: 65.945
+  type: 'test'
+  ...
+# Subtest: CLI refuses overwrite and preserves prior files
+ok 35 - CLI refuses overwrite and preserves prior files
+  ---
+  duration_ms: 113.421
+  type: 'test'
+  ...
+# Subtest: CLI parse and usage errors do not echo private details
+ok 36 - CLI parse and usage errors do not echo private details
+  ---
+  duration_ms: 145.6235
+  type: 'test'
+  ...
+# Subtest: CLI malformed status generates truthful safe error preview
+ok 37 - CLI malformed status generates truthful safe error preview
+  ---
+  duration_ms: 55.9375
+  type: 'test'
+  ...
+# Subtest: descriptor reader consumes at most 65537 bytes of an oversized real file
+ok 38 - descriptor reader consumes at most 65537 bytes of an oversized real file
+  ---
+  duration_ms: 11.9043
+  type: 'test'
+  ...
+# Subtest: bounded reader returns complete bytes through short real-file reads
+ok 39 - bounded reader returns complete bytes through short real-file reads
+  ---
+  duration_ms: 7.6785
+  type: 'test'
+  ...
+# Subtest: bounded input accepts its exact byte limit
+ok 40 - bounded input accepts its exact byte limit
+  ---
+  duration_ms: 7.3153
+  type: 'test'
+  ...
+# Subtest: unsupported non-regular input is rejected before any read
+ok 41 - unsupported non-regular input is rejected before any read
+  ---
+  duration_ms: 0.2439
+  type: 'test'
+  ...
+# Subtest: projects exact public keys and approved values only
+ok 42 - projects exact public keys and approved values only
+  ---
+  duration_ms: 1.3976
+  type: 'test'
+  ...
+# Subtest: only title approval reveals title
+ok 43 - only title approval reveals title
+  ---
+  duration_ms: 0.1202
+  type: 'test'
+  ...
+# Subtest: only summary approval reveals summary
+ok 44 - only summary approval reveals summary
+  ---
+  duration_ms: 0.091
+  type: 'test'
+  ...
+# Subtest: only caption approval reveals caption
+ok 45 - only caption approval reveals caption
+  ---
+  duration_ms: 0.1221
+  type: 'test'
+  ...
+# Subtest: no approval undefined reveals no strings
+ok 46 - no approval undefined reveals no strings
+  ---
+  duration_ms: 0.1331
+  type: 'test'
+  ...
+# Subtest: no approval null reveals no strings
+ok 47 - no approval null reveals no strings
+  ---
+  duration_ms: 0.1079
+  type: 'test'
+  ...
+# Subtest: no approval [] reveals no strings
+ok 48 - no approval [] reveals no strings
+  ---
+  duration_ms: 0.0607
+  type: 'test'
+  ...
+# Subtest: invalid approval fails closed ["private"]
+ok 49 - invalid approval fails closed ["private"]
+  ---
+  duration_ms: 0.1247
+  type: 'test'
+  ...
+# Subtest: invalid approval fails closed ["title","private"]
+ok 50 - invalid approval fails closed ["title","private"]
+  ---
+  duration_ms: 0.2594
+  type: 'test'
+  ...
+# Subtest: invalid approval fails closed "title"
+ok 51 - invalid approval fails closed "title"
+  ---
+  duration_ms: 0.2324
+  type: 'test'
+  ...
+# Subtest: invalid approval fails closed {}
+ok 52 - invalid approval fails closed {}
+  ---
+  duration_ms: 0.0929
+  type: 'test'
+  ...
+# Subtest: invalid approval fails closed ["title",3]
+ok 53 - invalid approval fails closed ["title",3]
+  ---
+  duration_ms: 0.0514
+  type: 'test'
+  ...
+# Subtest: idle suppresses results
+ok 54 - idle suppresses results
+  ---
+  duration_ms: 0.0803
+  type: 'test'
+  ...
+# Subtest: loading suppresses results
+ok 55 - loading suppresses results
+  ---
+  duration_ms: 0.0457
+  type: 'test'
+  ...
+# Subtest: blocked suppresses results
+ok 56 - blocked suppresses results
+  ---
+  duration_ms: 0.0452
+  type: 'test'
+  ...
+# Subtest: error suppresses results
+ok 57 - error suppresses results
+  ---
+  duration_ms: 0.0356
+  type: 'test'
+  ...
+# Subtest: cancelled suppresses results
+ok 58 - cancelled suppresses results
+  ---
+  duration_ms: 0.0401
+  type: 'test'
+  ...
+# Subtest: invalid status undefined fails closed
+ok 59 - invalid status undefined fails closed
+  ---
+  duration_ms: 0.0531
+  type: 'test'
+  ...
+# Subtest: invalid status {} fails closed
+ok 60 - invalid status {} fails closed
+  ---
+  duration_ms: 0.0303
+  type: 'test'
+  ...
+# Subtest: invalid status "success" fails closed
+ok 61 - invalid status "success" fails closed
+  ---
+  duration_ms: 0.0245
+  type: 'test'
+  ...
+# Subtest: invalid status 17 fails closed
+ok 62 - invalid status 17 fails closed
+  ---
+  duration_ms: 0.0266
+  type: 'test'
+  ...
+# Subtest: invalid status null fails closed
+ok 63 - invalid status null fails closed
+  ---
+  duration_ms: 0.0273
+  type: 'test'
+  ...
+# Subtest: title bounds count Unicode code points
+ok 64 - title bounds count Unicode code points
+  ---
+  duration_ms: 0.0973
+  type: 'test'
+  ...
+# Subtest: title rejects control 10
+ok 65 - title rejects control 10
+  ---
+  duration_ms: 0.0704
+  type: 'test'
+  ...
+# Subtest: title rejects control 13
+ok 66 - title rejects control 13
+  ---
+  duration_ms: 0.0353
+  type: 'test'
+  ...
+# Subtest: title rejects control 0
+ok 67 - title rejects control 0
+  ---
+  duration_ms: 0.0306
+  type: 'test'
+  ...
+# Subtest: title rejects control 127
+ok 68 - title rejects control 127
+  ---
+  duration_ms: 0.0286
+  type: 'test'
+  ...
+# Subtest: title rejects control 8232
+ok 69 - title rejects control 8232
+  ---
+  duration_ms: 0.0342
+  type: 'test'
+  ...
+# Subtest: title rejects control 8233
+ok 70 - title rejects control 8233
+  ---
+  duration_ms: 0.029
+  type: 'test'
+  ...
+# Subtest: title rejects non-text
+ok 71 - title rejects non-text
+  ---
+  duration_ms: 0.0655
+  type: 'test'
+  ...
+# Subtest: summary bounds count Unicode code points
+ok 72 - summary bounds count Unicode code points
+  ---
+  duration_ms: 0.0427
+  type: 'test'
+  ...
+# Subtest: summary rejects control 10
+ok 73 - summary rejects control 10
+  ---
+  duration_ms: 0.0303
+  type: 'test'
+  ...
+# Subtest: summary rejects control 13
+ok 74 - summary rejects control 13
+  ---
+  duration_ms: 0.029
+  type: 'test'
+  ...
+# Subtest: summary rejects control 0
+ok 75 - summary rejects control 0
+  ---
+  duration_ms: 0.031
+  type: 'test'
+  ...
+# Subtest: summary rejects control 127
+ok 76 - summary rejects control 127
+  ---
+  duration_ms: 0.7322
+  type: 'test'
+  ...
+# Subtest: summary rejects control 8232
+ok 77 - summary rejects control 8232
+  ---
+  duration_ms: 0.1077
+  type: 'test'
+  ...
+# Subtest: summary rejects control 8233
+ok 78 - summary rejects control 8233
+  ---
+  duration_ms: 0.0675
+  type: 'test'
+  ...
+# Subtest: summary rejects non-text
+ok 79 - summary rejects non-text
+  ---
+  duration_ms: 0.1271
+  type: 'test'
+  ...
+# Subtest: caption bounds count Unicode code points
+ok 80 - caption bounds count Unicode code points
+  ---
+  duration_ms: 0.0895
+  type: 'test'
+  ...
+# Subtest: caption rejects control 10
+ok 81 - caption rejects control 10
+  ---
+  duration_ms: 0.0844
+  type: 'test'
+  ...
+# Subtest: caption rejects control 13
+ok 82 - caption rejects control 13
+  ---
+  duration_ms: 0.0661
+  type: 'test'
+  ...
+# Subtest: caption rejects control 0
+ok 83 - caption rejects control 0
+  ---
+  duration_ms: 0.0445
+  type: 'test'
+  ...
+# Subtest: caption rejects control 127
+ok 84 - caption rejects control 127
+  ---
+  duration_ms: 0.0377
+  type: 'test'
+  ...
+# Subtest: caption rejects control 8232
+ok 85 - caption rejects control 8232
+  ---
+  duration_ms: 0.04
+  type: 'test'
+  ...
+# Subtest: caption rejects control 8233
+ok 86 - caption rejects control 8233
+  ---
+  duration_ms: 0.1976
+  type: 'test'
+  ...
+# Subtest: caption rejects non-text
+ok 87 - caption rejects non-text
+  ---
+  duration_ms: 0.0539
+  type: 'test'
+  ...
+# Subtest: HTML-like approved input remains data at projection
+ok 88 - HTML-like approved input remains data at projection
+  ---
+  duration_ms: 0.0882
+  type: 'test'
+  ...
+# Subtest: unapproved fields are not accessed or recursively copied
+ok 89 - unapproved fields are not accessed or recursively copied
+  ---
+  duration_ms: 0.1233
+  type: 'test'
+  ...
+# Subtest: approved accessor fails closed without evaluating it
+ok 90 - approved accessor fails closed without evaluating it
+  ---
+  duration_ms: 0.199
+  type: 'test'
+  ...
+# Subtest: inherited input status is not trusted
+ok 91 - inherited input status is not trusted
+  ---
+  duration_ms: 0.0859
+  type: 'test'
+  ...
+# Subtest: invalid records fail closed
+ok 92 - invalid records fail closed
+  ---
+  duration_ms: 0.0768
+  type: 'test'
+  ...
+# Subtest: public validation rejects extra/inherited/accessor keys and stale state content
+ok 93 - public validation rejects extra/inherited/accessor keys and stale state content
+  ---
+  duration_ms: 0.2023
+  type: 'test'
+  ...
+# Subtest: approval iterators cannot substitute an unapproved field
+ok 94 - approval iterators cannot substitute an unapproved field
+  ---
+  duration_ms: 0.0938
+  type: 'test'
+  ...
+# Subtest: overridden approval methods and unexpected keys fail closed
+ok 95 - overridden approval methods and unexpected keys fail closed
+  ---
+  duration_ms: 0.0917
+  type: 'test'
+  ...
+# Subtest: approval accessors are rejected without reading them
+ok 96 - approval accessors are rejected without reading them
+  ---
+  duration_ms: 0.0799
+  type: 'test'
+  ...
+# Subtest: sparse and duplicate approval arrays fail closed
+ok 97 - sparse and duplicate approval arrays fail closed
+  ---
+  duration_ms: 0.0751
+  type: 'test'
+  ...
+# Subtest: ready to idle clears stale public results
+ok 98 - ready to idle clears stale public results
+  ---
+  duration_ms: 1.9051
+  type: 'test'
+  ...
+# Subtest: ready to loading clears stale public results
+ok 99 - ready to loading clears stale public results
+  ---
+  duration_ms: 0.0969
+  type: 'test'
+  ...
+# Subtest: ready to blocked clears stale public results
+ok 100 - ready to blocked clears stale public results
+  ---
+  duration_ms: 0.0607
+  type: 'test'
+  ...
+# Subtest: ready to error clears stale public results
+ok 101 - ready to error clears stale public results
+  ---
+  duration_ms: 0.1568
+  type: 'test'
+  ...
+# Subtest: ready to cancelled clears stale public results
+ok 102 - ready to cancelled clears stale public results
+  ---
+  duration_ms: 0.1227
+  type: 'test'
+  ...
+# Subtest: repeated transitions remain safe without resurrecting results
+ok 103 - repeated transitions remain safe without resurrecting results
+  ---
+  duration_ms: 0.0918
+  type: 'test'
+  ...
+# Subtest: ready to ready retains approved results
+ok 104 - ready to ready retains approved results
+  ---
+  duration_ms: 0.1281
+  type: 'test'
+  ...
+# Subtest: invalid transition "complete" returns safe error
+ok 105 - invalid transition "complete" returns safe error
+  ---
+  duration_ms: 0.0969
+  type: 'test'
+  ...
+# Subtest: invalid transition null returns safe error
+ok 106 - invalid transition null returns safe error
+  ---
+  duration_ms: 0.2509
+  type: 'test'
+  ...
+# Subtest: invalid transition {} returns safe error
+ok 107 - invalid transition {} returns safe error
+  ---
+  duration_ms: 0.2288
+  type: 'test'
+  ...
+# Subtest: invalid transition undefined returns safe error
+ok 108 - invalid transition undefined returns safe error
+  ---
+  duration_ms: 0.0988
+  type: 'test'
+  ...
+# Subtest: invalid source view returns safe error
+ok 109 - invalid source view returns safe error
+  ---
+  duration_ms: 0.0854
+  type: 'test'
+  ...
+1..109
+# tests 109
+# suites 0
+# pass 98
+# fail 1
+# cancelled 0
+# skipped 10
+# todo 0
+# duration_ms 483.59

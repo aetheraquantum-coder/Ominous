@@ -1,0 +1,13 @@
+{
+  "schema": "ominous-demo-receipt/v1",
+  "sourceSha256": "ee9ff3d2ddbbea3e4ba78f837604ffaabae73668c19294c86a942e079e53da01",
+  "publicStatus": "ready",
+  "publicSha256": {
+    "html": "92c51afd943f055d36cdc3b812881a8a5eed20fc6ff1c9c9f9ced71220cea64a",
+    "json": "07a2cc428d12ab66402443efefb098ddb2d58aef4243d951638296183d071d0d",
+    "srt": "48e4b7c4d1c2fdae5c74a20d072ef897318eaa67a78da788188e2286d9fabd44"
+  },
+  "classification": "synthetic standalone preview",
+  "browserVerification": "not-run",
+  "generatedAt": "2026-10-07T10:47:28.384Z"
+}
