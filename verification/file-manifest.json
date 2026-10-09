@@ -1,5 +1,5 @@
 {
-  "scope": "Every upload file except this self-referential manifest",
+  "scope": "Prepared Core 24 package files except this self-referential manifest; README and handoff hashes updated for the 2026-10-09 publication-status correction. The separately preserved repository seed docs/seed-gitattributes.txt is outside this package manifest.",
   "files": [
     {
       "path": ".gitattributes",
@@ -21,9 +21,9 @@
     },
     {
       "path": "docs/PRIVATE-HANDOFF.md",
-      "size": 4339,
-      "sha256": "55d06225cd5178e1c4a23af3a01d950d00d3f27bd2f48c12a49c05460c2eae6a",
-      "git_blob_sha1": "427fabca44aa4f3faec137cffabbed2c39e75166"
+      "size": 4960,
+      "sha256": "1803b23fdef44c97d862deec323fe74368cdfc081cfdb777285dade7f0afb9d8",
+      "git_blob_sha1": "460f124353e413cf7fc3558388207c4c755a086e"
     },
     {
       "path": "example-public/captions.srt",
@@ -81,9 +81,9 @@
     },
     {
       "path": "README.md",
-      "size": 5448,
-      "sha256": "aea2390bb921a689e1b7bdfd3ad8e18aeca87ae2772b3321f416e92fd7d0ced1",
-      "git_blob_sha1": "6663ee3c9c387319a3ac86cd0e98498a3431621b"
+      "size": 6420,
+      "sha256": "c0d7bf5bb08371c627e4fe4b199d3137e6424fac7aac24c13ce1dd61e7b41d0a",
+      "git_blob_sha1": "754c48ee43e1c83f12286b2110a9671e098f148c"
     },
     {
       "path": "src/browser-script.mjs",

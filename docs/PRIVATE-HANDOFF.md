@@ -1,6 +1,8 @@
-# Private GitHub handoff status
+# Core 24 publication and handoff status
 
-Public launch is on hold. Intended repository: aetheraquantum-coder/Ominous-Core-24 (PRIVATE). No remote repository or upload has been completed.
+The source is publicly available at https://github.com/aetheraquantum-coder/Ominous. On 2026-10-09, the owner changed the repository from private to public and reported sharing it online. Public access was verified. The original private upload was verified at commit c1e7e9acb5b200f3c72bddd78a4df30d0b8d79fa: all 31 prepared files matched their upload hashes, with one additional preserved seed file at docs/seed-gitattributes.txt. This is source publication only, not a hosted application or wider Foundation deployment.
+
+This file retains its original filename for link continuity. The private handoff and upload blockers below are dated history, not current publication status.
 
 ## Provenance and scope
 
@@ -24,11 +26,13 @@ Historical evidence in verification.json records 99 passes and 10 browser cases 
 
 A credential-pattern scan of the scoped files found no matches for common GitHub/OpenAI/AWS credentials, private keys, or URL-embedded credentials. Fixtures use explicitly synthetic OMINOUS_PRIVATE markers. This inspection is not a universal secret-detection guarantee.
 
-## Remaining actions
+## Remaining validation
 
-Run the unchanged tests on an authorized Node 24+ host with permitted symlink support; preserve browser checks as unrun unless separately available. Create the private repository via an already authenticated supported GitHub browser or CLI, upload only this scoped directory, and verify remote exact commit, file count, and private visibility.
+Run the unchanged tests on an authorized Node 24+ host with permitted symlink support; preserve browser checks as unrun unless separately available. The repository upload is complete; no further publication action is implied by these outstanding checks.
 
-Connected GitHub repository inventory succeeded and showed no Ominous repository. Connector actions expose no repository-creation operation. No browser surfaces are available; in-app browser creation reports unavailable. GitHub CLI was absent from PATH and standard installation locations. No token or broader access was requested.
+## Recovery history — before the 2026-10-09 upload
+
+At the initial recovery check, connected GitHub repository inventory succeeded and showed no Ominous repository. Connector actions expose no repository-creation operation. No browser surfaces are available; in-app browser creation reports unavailable. GitHub CLI was absent from PATH and standard installation locations. No token or broader access was requested.
 
 ## Additional revision verification
 
@@ -36,4 +40,4 @@ The independently existing local Ominous GPT handoff ZIP contains source/Ominous
 
 No node.exe was found beneath Documents/Codex (including its render-tools), AppData/Local/Codex, AppData/Local/ToolLib, or .codex/cache, .codex/node_repl and .codex/tmp. Standard Program Files/nodejs was also absent. No runtime was installed. Node 24 verification remains pending.
 
-Upload is pending an empty PRIVATE repository supplied by the owner. No repository upload has occurred.
+The owner subsequently seeded a private repository named Ominous. The prepared files were uploaded and verified there, and the owner later made it public as recorded above.

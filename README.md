@@ -1,6 +1,12 @@
 # Ominous · Core 24
 
-A private, standalone screen-safe presentation prototype. The host selects explicitly approved text; the presentation receives only that small public snapshot. It never receives the fixture's private fields. This is a candidate, not an installed Ominous GPT or a connected Onyx core.
+A publicly available, standalone screen-safe presentation prototype. The host selects explicitly approved text; the presentation receives only that small public snapshot. It never receives the fixture's private fields. This is a candidate, not an installed Ominous GPT or a connected Onyx core.
+
+## Publication and verification status
+
+The owner made [this repository](https://github.com/aetheraquantum-coder/Ominous) public and reported sharing it online on 2026-10-09. Public repository access has been verified. This publishes the Core 24 source candidate; it does not establish a hosted application, wider Foundation integration or production readiness.
+
+The latest local Windows run recorded **98 passed, 1 failed, and 10 browser scenarios skipped**. The failure occurred during symlink test setup (`EPERM`), before the behavior could be checked. That run used Node 22.23.2; verification on the required Node 24 remains pending. See [handoff and provenance](docs/PRIVATE-HANDOFF.md) for details and historical evidence.
 
 ## Quick start
 
@@ -15,7 +21,7 @@ The output directory must not already exist. To keep another run:
 
     node bin/demo.mjs --fixture fixtures/approved.json --out another-output
 
-The output is deliberately not served or hosted. Do not serve the entire project folder: it also contains source fixtures and separate review material. For any later authorized publication, select only the reviewed public output directory.
+The generated presentation output is not served or hosted by this repository publication. Do not serve the entire project folder: it also contains source fixtures and separate review material. For any later authorized publication, select only the reviewed public output directory.
 
 ## Data boundary
 
@@ -51,10 +57,10 @@ On a separately permitted host with Playwright and Chromium already available, a
 
 ## Scope
 
-No runtime dependencies, network services, accounts, spending, public deployment or product connections. Cores 1–23, Core 1 OG/Mantis and the separate blocked execution work are untouched. Tests of this candidate do not verify those systems. A fresh independent code review and its outcome are recorded with the delivered verification report.
+The prototype adds no runtime dependencies, network services, accounts, spending or product connections. Public source availability does not deploy the presentation application. Cores 1–23, Core 1 OG/Mantis and the separate blocked execution work are untouched. Tests of this candidate do not verify those systems. A fresh independent code review and its outcome are recorded with the delivered verification report.
 
 ## Review outcome
 
-Independent review found two Important issues, both fixed with regression tests: bounded input consumption and approval-array descriptor consistency. The final source check run has 99 passes, zero failures and 10 browser scenarios not run.
+Independent review found two Important issues, both fixed with regression tests: bounded input consumption and approval-array descriptor consistency. The historical source check run recorded 99 passes, zero failures and 10 browser scenarios not run. The latest Windows result is listed above and does not supersede the preserved historical evidence.
 
 One minor edge case is deferred: invalid browser-controller state input retains the already-approved title, while the host API clears it. Both paths show error and clear result text; normal selector options cannot produce the malformed state. The fake-DOM parity test does not cover the title difference. See verification.json for the exact scope and source hashes.
