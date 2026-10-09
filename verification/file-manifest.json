@@ -21,9 +21,9 @@
     },
     {
       "path": "docs/PRIVATE-HANDOFF.md",
-      "size": 4960,
-      "sha256": "1803b23fdef44c97d862deec323fe74368cdfc081cfdb777285dade7f0afb9d8",
-      "git_blob_sha1": "460f124353e413cf7fc3558388207c4c755a086e"
+      "size": 4950,
+      "sha256": "30f6ab13f08ff988495396c34b75162f4dc323633daaaad96b875187b2463c9f",
+      "git_blob_sha1": "d2042c7c4e3931f598330f5a6282e1a8e63a67e1"
     },
     {
       "path": "example-public/captions.srt",
@@ -81,9 +81,9 @@
     },
     {
       "path": "README.md",
-      "size": 6420,
-      "sha256": "c0d7bf5bb08371c627e4fe4b199d3137e6424fac7aac24c13ce1dd61e7b41d0a",
-      "git_blob_sha1": "754c48ee43e1c83f12286b2110a9671e098f148c"
+      "size": 6413,
+      "sha256": "2c9764df5c338a76abd207576f63abedaee02b58e61a34805f64481a019d24d0",
+      "git_blob_sha1": "ac4f1e630d230878a7da7a363f74e090d277611f"
     },
     {
       "path": "src/browser-script.mjs",
