@@ -1,1 +1,59 @@
-{"name":"ominous-core24-prototype","version":"0.1.0","private":true,"type":"module","scripts":{"test":"node --test test/*.test.mjs","test:browser":"node --test test/browser.test.cjs","demo":"node bin/demo.mjs --fixture fixtures/approved.json --out out"},"engines":{"node":">=24"}}
+{
+  "name": "ominous-desktop",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "test": "node --test test/*.test.mjs desktop/test/*.test.mjs",
+    "test:browser": "node --test test/browser.test.cjs",
+    "demo": "node bin/demo.mjs --fixture fixtures/approved.json --out out",
+    "start": "electron .",
+    "dist:win": "electron-builder --win --x64 --dir --publish never && node build/installer.mjs",
+    "pack:win": "electron-builder --win --x64 --dir --publish never",
+    "test:desktop": "node --test desktop/test/*.test.mjs",
+    "test:windows": "node desktop/test/windows-smoke.cjs"
+  },
+  "engines": {
+    "node": ">=24"
+  },
+  "devDependencies": {
+    "electron": "44.7.0",
+    "electron-builder": "26.15.3",
+    "jsdom": "27.0.1",
+    "playwright": "1.61.1",
+    "resedit": "3.0.2"
+  },
+  "description": "Offline Ominous presentation studio for Windows",
+  "main": "desktop/main.mjs",
+  "author": "Aethera Quantum Technologies",
+  "build": {
+    "appId": "com.aethera.ominous",
+    "productName": "Ominous",
+    "asar": true,
+    "directories": {
+      "output": "dist",
+      "buildResources": "build"
+    },
+    "files": [
+      "desktop/main.mjs",
+      "desktop/preload.cjs",
+      "desktop/project.mjs",
+      "desktop/ui/**/*",
+      "src/**/*",
+      "package.json"
+    ],
+    "win": {
+      "target": [
+        {
+          "target": "nsis",
+          "arch": [
+            "x64"
+          ]
+        }
+      ],
+      "icon": "build/icon.ico",
+      "executableName": "Ominous",
+      "signAndEditExecutable": false
+    }
+  }
+}

@@ -1,4 +1,6 @@
-# Local generated output
-/out/
-/node_modules/
+node_modules/
+dist/
+out/
+.superpowers/
+*.log
 *.log.tmp

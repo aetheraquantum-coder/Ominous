@@ -1,3 +1,17 @@
+# Ominous for Windows
+
+Ominous Desktop 1.0.0 turns this repository's Core 24 presentation engine into an offline Windows application. Download the supplied **Ominous-Setup-1.0.0-x64.exe**, run it, and open Ominous from your desktop or Start menu. The installer includes the runtime; no developer tools or account are needed.
+
+The app provides a message editor, live preview, automatic local draft saving, private notes, native project Open/Save, a presentation window and public HTML/JSON/SRT export. It does not bundle AI inference or running implementations of the other 23 cores. [Windows guide](docs/WINDOWS.md) · [Build evidence](docs/WINDOWS-VERIFICATION.md).
+
+The first installer is unsigned. Native Windows installation and launch still need validation; 114 automated source/storage/controller checks pass on the build host. The included Windows Actions workflow is prepared but has not been run.
+
+Developers: `npm ci`, `npm test`, `npm run dist:win`. The final command packages the application and compiles a per-user NSIS installer with no Wine requirement. Source on the new desktop branch is local until the owner approves pushing it.
+
+---
+
+## Preserved prototype documentation
+
 # Ominous · Core 24
 
 A publicly available, standalone screen-safe presentation prototype. The host selects explicitly approved text; the presentation receives only that small public snapshot. It never receives the fixture's private fields. This is a candidate, not an installed Ominous GPT or a connected Onyx core.

@@ -1,0 +1,31 @@
+import {readFile,writeFile,readdir,stat} from 'node:fs/promises';
+import path from 'node:path';
+import {spawnSync} from 'node:child_process';
+import {createRequire} from 'node:module';
+import * as PE from 'pe-library';
+import * as ResEdit from 'resedit';
+const require=createRequire(import.meta.url);
+const {getMakeNsisPath}=require('app-builder-lib/out/toolsets/windows.js');
+const root=path.resolve(import.meta.dirname,'..');
+const payload=path.join(root,'dist/win-unpacked');
+const exePath=path.join(payload,'Ominous.exe');
+const exe=PE.NtExecutable.from(await readFile(exePath),{ignoreCert:true});
+const resources=PE.NtExecutableResource.from(exe);
+const iconFile=ResEdit.Data.IconFile.from(await readFile(path.join(root,'build/icon.ico')));
+for(const icon of ResEdit.Resource.IconGroupEntry.fromEntries(resources.entries))ResEdit.Resource.IconGroupEntry.replaceIconsForResource(resources.entries,icon.id,icon.lang,iconFile.icons.map(item=>item.data));
+for(const version of ResEdit.Resource.VersionInfo.fromEntries(resources.entries)){
+ version.setFileVersion(1,0,0,0,1033);version.setProductVersion(1,0,0,0,1033);
+ version.setStringValues({lang:1033,codepage:1200},{CompanyName:'Aethera Quantum Technologies',FileDescription:'Ominous presentation studio',InternalName:'Ominous',OriginalFilename:'Ominous.exe',ProductName:'Ominous',LegalCopyright:'Aethera Quantum Technologies'});version.outputToResourceEntries(resources.entries);
+}
+resources.outputResource(exe);await writeFile(exePath,Buffer.from(exe.generate()));
+const files=[],dirs=[];let bytes=0;
+async function walk(dir){for(const entry of await readdir(path.join(payload,dir),{withFileTypes:true})){const relative=path.join(dir,entry.name);if(entry.isDirectory()){dirs.push(relative);await walk(relative);}else{files.push(relative);bytes+=(await stat(path.join(payload,relative))).size;}}}await walk('');
+const quote=p=>p.replaceAll('$','$$').replaceAll('"','$\\"').replaceAll('/','\\');
+const uninstallFile=path.join(root,'dist/uninstall-files.nsh');
+await writeFile(uninstallFile,[...files.map(f=>`Delete "$INSTDIR\\${quote(f)}"`),...dirs.sort((a,b)=>b.length-a.length).map(d=>`RMDir "$INSTDIR\\${quote(d)}"`)].join('\n')+'\n');
+const compiler=await getMakeNsisPath();
+const prefix=process.platform==='win32'?'/':'-';
+const defs={OUTPUT:path.join(root,'dist/Ominous-Setup-1.0.0-x64.exe'),PAYLOAD:payload,ICON:path.join(root,'build/icon.ico'),UNINSTALL_FILES:uninstallFile,INSTALLED_KB:String(Math.ceil(bytes/1024))};
+const args=[prefix+'V3',...Object.entries(defs).map(([k,v])=>prefix+'D'+k+'='+v),path.join(root,'build/installer.nsi')];
+const result=spawnSync(compiler.path,args,{stdio:'inherit',env:{...process.env,...compiler.env}});
+if(result.error)throw result.error;if(result.status!==0)process.exit(result.status||1);

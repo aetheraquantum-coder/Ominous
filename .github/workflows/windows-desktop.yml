@@ -1,0 +1,62 @@
+name: Windows desktop installer
+on:
+  push:
+    branches: [windows-desktop-easy-install]
+  pull_request:
+    paths: ['desktop/**', 'src/**', 'build/**', 'package*.json', '.github/workflows/windows-desktop.yml']
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  windows:
+    runs-on: windows-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '24'
+          cache: npm
+      - run: npm ci
+      - run: npm test
+      - run: npm run dist:win
+        env:
+          CSC_IDENTITY_AUTO_DISCOVERY: 'false'
+      - name: Install for the current user
+        shell: pwsh
+        run: |
+          $setup = (Get-ChildItem dist/Ominous-Setup-*-x64.exe).FullName
+          $result = Start-Process -FilePath $setup -ArgumentList '/S' -PassThru -Wait
+          if ($result.ExitCode -ne 0) { throw "Installer failed: $($result.ExitCode)" }
+          $exe = Join-Path $env:LOCALAPPDATA 'Programs/Ominous/Ominous.exe'
+          if (!(Test-Path $exe)) { throw 'Installed executable missing' }
+          "OMINOUS_TEST_EXE=$exe" | Out-File -FilePath $env:GITHUB_ENV -Append
+      - name: Run installed Windows app checks
+        run: npm run test:windows
+      - name: Check installer shortcuts and removal
+        shell: pwsh
+        run: |
+          $menu = Join-Path $env:APPDATA 'Microsoft/Windows/Start Menu/Programs/Ominous.lnk'
+          if (!(Test-Path $menu)) { throw 'Start menu shortcut missing' }
+          $uninstaller = Join-Path $env:LOCALAPPDATA 'Programs/Ominous/Uninstall Ominous.exe'
+          if (!(Test-Path $uninstaller)) { throw 'Uninstaller missing' }
+          $sentinelDir = Join-Path $env:APPDATA 'Ominous'
+          New-Item -ItemType Directory -Force $sentinelDir | Out-Null
+          $sentinel = Join-Path $sentinelDir 'keep-user-data.txt'
+          Set-Content $sentinel 'preserve this data'
+          $result = Start-Process -FilePath $uninstaller -ArgumentList '/S' -PassThru -Wait
+          Start-Sleep -Seconds 4
+          if (!(Test-Path $sentinel)) { throw 'Uninstall removed user data' }
+          if (Test-Path $menu) { throw 'Uninstall left Start menu shortcut' }
+      - name: Hash installer
+        shell: pwsh
+        run: |
+          Get-FileHash dist/Ominous-Setup-*-x64.exe -Algorithm SHA256 | Format-List | Out-File dist/windows-evidence/installer-sha256.txt
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: Ominous-Windows-1.0.0
+          path: |
+            dist/Ominous-Setup-*-x64.exe
+            dist/windows-evidence/
+          retention-days: 14
