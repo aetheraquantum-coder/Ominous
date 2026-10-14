@@ -14,7 +14,9 @@ Source baseline: `aetheraquantum-coder/Ominous` main commit `3373b7a273a7a82534c
 
 The desktop target is Windows 11 x64. Runtime: Electron 44.7.0. The setup bundles its runtime and uses a per-user NSIS installer with shortcuts, an uninstall entry and retained user data. The Windows executable has Ominous version metadata and the ghost icon.
 
-This is a cross-compiled, unsigned candidate. Native Windows install, launch, visual acceptance, upgrade and uninstall tests have not run. The planned Windows GitHub Actions job is in `.github/workflows/windows-desktop.yml`. Automatic approval review rejected pushing the branch because the owner authorized building but had not explicitly authorized publishing changes. No push, pull request, merge or release was performed.
+The owner explicitly approved publishing the desktop branch and running Windows tests on October 13, 2026. The branch is published. Windows GitHub Actions run [38505839993](https://github.com/aetheraquantum-coder/Ominous/actions/runs/38505839993) passed on Windows Server 2025 (build 26100), testing commit `8fecbcd8e938bcf31bf62f2340eab65016a653c3`. All 114 source/controller tests passed. Native installer execution, installed app launch, ten app smoke checks, Start menu shortcut, uninstall shortcut removal, and retention of an AppData sentinel passed. The smoke checks cover renderer isolation, preview, editing, autosave, reduced motion, private-note exclusion from export, project copy, field exclusion, close/relaunch recovery, and cancelled open. A test assertion import was corrected before the successful run.
+
+The installer remains unsigned. Interactive installer screens, Windows 11 on the owner's hardware, upgrade behavior, and final user visual acceptance remain unverified. No merge or release was performed.
 
 The source repository's older browser suite remains unrun; no sandbox restriction was disabled. Controller tests use JSDOM, not a real browser, and do not establish appearance, frame cadence or Windows runtime behavior.
 
@@ -24,9 +26,9 @@ Minor review note retained: summary and caption must be single-line text; valida
 
 - A source checkout on an isolated desktop branch preserves main.
 - A direct NSIS compiler build replaces the Wine-dependent installer assembly step. Native execution remains a separate required check.
-- Source changes and reproducible build files are included in the delivery because a remote push remains blocked.
+- Source changes and reproducible build files are published on `windows-desktop-easy-install`.
 
-## Final installer artifact
+## Original cross-compiled installer artifact
 
 - Setup compiled successfully with no NSIS warnings.
 - File: Ominous-Setup-1.0.0-x64.exe, 111,293,565 bytes (106.14 MiB).
@@ -37,3 +39,11 @@ Minor review note retained: summary and caption must be single-line text; valida
 - Application payload source commit: `489919e`; subsequent documentation commits do not change that payload.
 
 These structural checks do not replace native Windows execution.
+
+## Windows-tested installer artifact
+
+- Built and tested in run 38505839993 on October 14, 2026 UTC.
+- File: Ominous-Setup-1.0.0-x64.exe, 111,178,591 bytes.
+- SHA-256: `aa33df9845ac3dee856946e69b339d26f136a312a9ac6489646722450639d145`.
+- Downloaded CI ZIP digest matched GitHub; extracted installer SHA-256 matched the runner evidence.
+- CI artifact includes the installed-app screenshot, ten smoke-check results, and installer checksum.
