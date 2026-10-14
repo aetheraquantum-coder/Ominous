@@ -1,4 +1,5 @@
-const { _electron: electron, expect } = require('playwright');
+const { _electron: electron } = require('playwright');
+const { expect } = require('playwright/test');
 const assert=require('node:assert/strict');
 const fs=require('node:fs/promises');const path=require('node:path');const os=require('node:os');
 (async()=>{
